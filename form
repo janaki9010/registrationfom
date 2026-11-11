@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 320px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+
+    <form onsubmit="return registerUser()">
+
+        <input type="text" id="name"
+               placeholder="Enter Full Name" required>
+
+        <input type="email" id="email"
+               placeholder="Enter Email" required>
+
+        <input type="password" id="password"
+               placeholder="Enter Password" required>
+
+        <input type="password" id="confirm"
+               placeholder="Confirm Password" required>
+
+        <button type="submit">Register</button>
+
+    </form>
+</div>
+
+<script>
+    function registerUser() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let confirm = document.getElementById("confirm").value;
+
+        if (password !== confirm) {
+            alert("Passwords do not match!");
+            return false;
+        }
+
+        alert("Registration Successful! Welcome " + name);
+        return false;
+    }
+</script>
+
+</body>
+</html>
